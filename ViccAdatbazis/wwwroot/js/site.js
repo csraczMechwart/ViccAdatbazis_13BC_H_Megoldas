@@ -9,7 +9,7 @@ function lajkolas(id) {
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
             console.log(this.responseText);
-            document.getElementById("tetszikDb").innerHTML = 
+            document.getElementById("tetszikDb").innerHTML = this.responseText;           
         }
     });
 

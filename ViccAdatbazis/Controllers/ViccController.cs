@@ -102,11 +102,7 @@ namespace ViccAdatbazis.Controllers
             vicc.Tetszik++;
             _context.Entry(vicc).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-            var valasz = new
-            {
-                tdb = vicc.Tetszik
-            };
-            return Ok(JsonSerializer.Serialize(valasz));
+            return Ok(vicc.Tetszik);
         }
 
         //DisLike
@@ -119,7 +115,7 @@ namespace ViccAdatbazis.Controllers
             vicc.NemTetszik++;
             _context.Entry(vicc).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-            return NoContent();
+            return Ok(vicc.NemTetszik);
         }
     }
 }
